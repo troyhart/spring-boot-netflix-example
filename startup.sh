@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-gradle bootRun
+gradle build
+gradle bootRun -p eureka-server &
+gradle bootRun -p notifications-service &
