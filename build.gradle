@@ -37,8 +37,8 @@ subprojects {
     dependencyManagement {
         imports {
             mavenBom("org.springframework.boot:spring-boot-dependencies:${theSpringBootVersion}")
-            mavenBom 'org.springframework.cloud:spring-cloud-netflix:1.0.7.RELEASE'
-            mavenBom 'io.spring.platform:platform-bom:2.0.3.RELEASE'
+            mavenBom "org.springframework.cloud:spring-cloud-netflix:${theSpringCloudNetflixVersion}"
+            mavenBom "io.spring.platform:platform-bom:${theSpringPlatformBomVersion}"
         }
     }
 
@@ -56,6 +56,5 @@ allprojects {
     apply plugin: 'idea'
 
     version = theVersion
-
     group = theGroup
 }

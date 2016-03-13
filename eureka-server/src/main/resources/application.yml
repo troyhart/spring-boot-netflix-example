@@ -6,7 +6,9 @@ error:
     whitelabel:
       enabled: false
 
-
+spring:
+  application:
+    name: eureka-server
 
 #Eureka Specifics
 

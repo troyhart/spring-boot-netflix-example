@@ -12,7 +12,7 @@ public class EurekaServer {
     public static void main(String[] args) {
         SpringApplication eurekaServer = new SpringApplication(EurekaServer.class);
         eurekaServer.addListeners(new ApplicationPidFileWriter("eureka-server.pid"));
-        eurekaServer.run();
+        eurekaServer.run(args);
     }
 
 }
