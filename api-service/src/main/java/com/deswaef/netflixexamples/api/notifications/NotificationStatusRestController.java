@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @RestController
-@RequestMapping("/notifications")
+@RequestMapping("/api/notifications")
 public class NotificationStatusRestController {
 
     @Autowired
