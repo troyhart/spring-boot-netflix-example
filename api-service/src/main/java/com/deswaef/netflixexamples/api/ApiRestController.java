@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-@RequestMapping(value = "/")
+@RequestMapping(value = "/api")
 @RestController
 public class ApiRestController {
 
