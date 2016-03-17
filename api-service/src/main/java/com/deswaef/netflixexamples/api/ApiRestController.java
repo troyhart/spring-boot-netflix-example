@@ -27,7 +27,7 @@ public class ApiRestController {
 
     @RequestMapping(method = GET)
     public String version() {
-        throw new ApiException("failing");
+        return applicationVersion;
     }
 
 }
