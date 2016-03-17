@@ -2,8 +2,8 @@ apply plugin: 'spring-boot'
 apply plugin: "io.spring.dependency-management"
 
 jar {
-    baseName = 'notifications-server'
-    version = theVersion
+    baseName = 'notifications-service'
+    version = null
 }
 
 dependencyManagement {
@@ -16,8 +16,11 @@ dependencyManagement {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter")
     compile("org.springframework.boot:spring-boot-starter-actuator")
-
     compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+}
+
+springBoot {
+    executable = true
 }
 
 bootRun {

@@ -3,7 +3,7 @@ apply plugin: "io.spring.dependency-management"
 
 jar {
     baseName = 'eureka-server'
-    version = theVersion
+    version = null
 }
 
 dependencyManagement {
@@ -20,6 +20,10 @@ dependencies {
     compile 'org.springframework.cloud:spring-cloud-starter-eureka'
     compile 'org.springframework.cloud:spring-cloud-starter-eureka-server'
 
+}
+
+springBoot {
+    executable = true
 }
 
 bootRun {
