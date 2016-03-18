@@ -1,6 +1,5 @@
 package com.deswaef.netflixexamples.api;
 
-import com.deswaef.netflixexamples.api.infrastructure.ApiException;
 import com.netflix.hystrix.exception.HystrixRuntimeException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
