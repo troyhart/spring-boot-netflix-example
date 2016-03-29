@@ -2,6 +2,7 @@ package com.deswaef.netflixexamples.api.notifications.service;
 
 import com.deswaef.netflixexamples.api.infrastructure.Collaborators;
 import com.deswaef.netflixexamples.api.notifications.client.NotificationResource;
+import com.deswaef.netflixexamples.api.notifications.model.Notification;
 import com.netflix.appinfo.InstanceInfo.InstanceStatus;
 import com.netflix.discovery.DiscoveryClient;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -13,6 +14,9 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import rx.Observable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class NotificationService {
@@ -53,14 +57,18 @@ public class NotificationService {
         return restTemplate.getForObject("http://notification-service/version", String.class);
     }
 
-    @HystrixCommand(groupKey = "tp-notification-service", fallbackMethod = "notificationsAreDown")
-    public String version2() {
-        return notificationResource.version();
-    }
-
     public String notificationsAreDown() {
         LOG.debug("Seems like our notifications-service is down: ");
         return "notification stuff down";
+    }
+
+    @HystrixCommand(groupKey = "tp-notification-service", fallbackMethod = "noNotifications")
+    public List<Notification> notifications() {
+        return notificationResource.findAll();
+    }
+
+    public List<Notification> noNotifications() {
+        return new ArrayList<>();
     }
 
 }

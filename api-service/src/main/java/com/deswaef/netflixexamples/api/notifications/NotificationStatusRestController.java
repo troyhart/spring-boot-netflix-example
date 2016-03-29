@@ -1,11 +1,14 @@
 package com.deswaef.netflixexamples.api.notifications;
 
+import com.deswaef.netflixexamples.api.notifications.model.Notification;
 import com.deswaef.netflixexamples.api.notifications.service.NotificationService;
 import com.netflix.appinfo.InstanceInfo.InstanceStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.async.DeferredResult;
+
+import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
@@ -37,10 +40,9 @@ public class NotificationStatusRestController {
         return notificationService.version();
     }
 
-    @RequestMapping("/version2")
-    public String version2() {
-        return notificationService.version2();
+    @RequestMapping("/all")
+    public List<Notification> findAll() {
+        return notificationService.notifications();
+
     }
-
-
 }
