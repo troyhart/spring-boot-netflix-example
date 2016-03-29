@@ -1,4 +1,4 @@
-package com.deswaef.netflixexamples.api;
+package com.deswaef.netflixexamples.api.core;
 
 import com.netflix.hystrix.exception.HystrixRuntimeException;
 import org.springframework.beans.factory.annotation.Value;
