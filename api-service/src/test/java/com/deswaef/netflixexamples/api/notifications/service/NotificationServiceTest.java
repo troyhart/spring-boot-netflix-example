@@ -49,13 +49,4 @@ public class NotificationServiceTest {
         assertThat(notificationService.version())
                 .isEqualTo(VERSION);
     }
-
-    @Test
-    public void version2CallsFeignClient() throws Exception {
-        when(notificationResource.version())
-                .thenReturn(VERSION);
-
-        assertThat(notificationService.version2())
-                .isEqualTo(VERSION);
-    }
 }
