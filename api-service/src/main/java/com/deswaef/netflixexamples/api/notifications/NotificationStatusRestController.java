@@ -32,5 +32,15 @@ public class NotificationStatusRestController {
         return result;
     }
 
+    @RequestMapping("/version")
+    public String version() {
+        return notificationService.version();
+    }
+
+    @RequestMapping("/version2")
+    public String version2() {
+        return notificationService.version2();
+    }
+
 
 }
