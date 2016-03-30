@@ -43,6 +43,5 @@ public class NotificationStatusRestController {
     @RequestMapping("/all")
     public List<Notification> findAll() {
         return notificationService.notifications();
-
     }
 }
