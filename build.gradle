@@ -8,6 +8,7 @@ buildscript {
         mavenCentral()
         jcenter()
         maven { url "http://repo.spring.io/release" }
+        maven { url "https://repo.spring.io/libs-milestone" }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${theSpringBootVersion}")
@@ -20,6 +21,7 @@ repositories {
     mavenCentral()
     jcenter()
     maven { url "http://repo.spring.io/release" }
+    maven { url "https://repo.spring.io/libs-milestone" }
 }
 
 
@@ -47,6 +49,7 @@ subprojects {
         mavenCentral()
         jcenter()
         maven { url "http://repo.spring.io/release" }
+        maven { url "https://repo.spring.io/libs-milestone" }
     }
 }
 
