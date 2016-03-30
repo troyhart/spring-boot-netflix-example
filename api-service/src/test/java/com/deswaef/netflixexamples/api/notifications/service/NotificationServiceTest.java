@@ -1,8 +1,10 @@
 package com.deswaef.netflixexamples.api.notifications.service;
 
 import com.deswaef.netflixexamples.api.notifications.client.NotificationResource;
+import com.deswaef.netflixexamples.api.notifications.client.NotificationVersionResource;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.DiscoveryClient;
+import com.netflix.discovery.EurekaClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -22,11 +24,11 @@ public class NotificationServiceTest {
     private NotificationService notificationService;
 
     @Mock
-    private DiscoveryClient discoveryClient;
+    private EurekaClient discoveryClient;
     @Mock
     private NotificationResource notificationResource;
     @Mock
-    private RestTemplate restTemplate;
+    private NotificationVersionResource notificationVersionResource;
 
     @Test
     public void notificationStatusCallsEurekaClient() {
@@ -43,7 +45,7 @@ public class NotificationServiceTest {
 
     @Test
     public void versionCallsRestTemplate()  {
-        when(restTemplate.getForObject("http://notification-service/version", String.class))
+        when(notificationVersionResource.version())
                 .thenReturn(VERSION);
 
         assertThat(notificationService.version())
