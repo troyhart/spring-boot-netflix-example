@@ -8,4 +8,4 @@
 
 # Spring Boot Netflix Examples - Part 3: Feign
 
-> This is a repository accompanying the blogpost posted at **coming soon**
+> This is a repository accompanying the blogpost posted at https://blog.de-swaef.eu/the-netflix-stack-using-spring-boot-part-3-feign/
