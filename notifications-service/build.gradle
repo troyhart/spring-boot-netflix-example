@@ -8,8 +8,7 @@ jar {
 
 dependencyManagement {
     imports {
-        mavenBom 'org.springframework.cloud:spring-cloud-netflix:${theSpringCloudNetflixVersion}'
-        mavenBom 'io.spring.platform:platform-bom:2.0.3.RELEASE'
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:${theSpringCloudVersion}'
     }
 }
 
