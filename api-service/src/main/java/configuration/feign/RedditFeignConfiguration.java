@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RedditFeignConfiguration {
 
-    public static final int FIVE_SECONDS = 5000;
+    private static final int FIVE_SECONDS = 5000;
 
     @Bean
     public Logger.Level feignLogger() {
